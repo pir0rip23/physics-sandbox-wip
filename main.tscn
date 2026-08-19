@@ -5,12 +5,12 @@
 [ext_resource type="Script" uid="uid://fl1wt1h16g4t" path="res://v_box_container.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://ca6bl1ouijnjy" path="res://camera_2d.gd" id="4_1bvp3"]
 [ext_resource type="PackedScene" path="res://addons/infinite_grid/infinite_grid_2d.tscn" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://bd3c6iju5itqf" path="res://рефакторинг/simulation_controller.gd" id="6_272bh"]
-[ext_resource type="Script" uid="uid://dfrgieypv7a63" path="res://рефакторинг/object_spawner.gd" id="7_5vw27"]
-[ext_resource type="Script" uid="uid://hflaoyy31jbd" path="res://рефакторинг/selection_manager.gd" id="8_efxa6"]
-[ext_resource type="Script" uid="uid://ca1inq3gis3hy" path="res://рефакторинг/link_manager.gd" id="9_dg77c"]
-[ext_resource type="Script" uid="uid://df1jsqp6bhe7n" path="res://рефакторинг/input_handler.gd" id="10_ycdy4"]
-[ext_resource type="Script" uid="uid://oic3he3yua5m" path="res://рефакторинг/ui_controller.gd" id="11_w48qg"]
+[ext_resource type="Script" uid="uid://bd3c6iju5itqf" path="res://Refactoring/simulation_controller.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://dfrgieypv7a63" path="res://Refactoring/object_spawner.gd" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://hflaoyy31jbd" path="res://Refactoring/selection_manager.gd" id="8_efxa6"]
+[ext_resource type="Script" uid="uid://ca1inq3gis3hy" path="res://Refactoring/link_manager.gd" id="9_dg77c"]
+[ext_resource type="Script" uid="uid://df1jsqp6bhe7n" path="res://Refactoring/input_handler.gd" id="10_ycdy4"]
+[ext_resource type="Script" uid="uid://oic3he3yua5m" path="res://Refactoring/ui_controller.gd" id="11_w48qg"]
 [ext_resource type="Script" uid="uid://dg2v41pa6hi7t" path="res://shape_drawer.gd" id="12_dg77c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
@@ -25,6 +25,9 @@ corner_detail = 20
 corner_detail = 20
 
 [sub_resource type="FontFile" id="FontFile_1n5va"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -231,6 +234,37 @@ layout_mode = 2
 max_value = 1000.0
 step = 0.1
 
+[node name="Label6" type="Label" parent="CanvasLayer/VBoxContainer/VSplitContainer/HSplitContainer/RightPanel/TabContainer/Object" unique_id=1523718511]
+layout_mode = 2
+text = "УГОЛ °"
+
+[node name="Angle_SpinBox" type="SpinBox" parent="CanvasLayer/VBoxContainer/VSplitContainer/HSplitContainer/RightPanel/TabContainer/Object" unique_id=1530213824]
+layout_mode = 2
+max_value = 360.0
+step = 0.1
+
+[node name="Label7" type="Label" parent="CanvasLayer/VBoxContainer/VSplitContainer/HSplitContainer/RightPanel/TabContainer/Object" unique_id=150301680]
+layout_mode = 2
+text = "ЛЕВАЯ СТОРОНА"
+
+[node name="LeftEdge_SpinBox" type="SpinBox" parent="CanvasLayer/VBoxContainer/VSplitContainer/HSplitContainer/RightPanel/TabContainer/Object" unique_id=1164146894]
+layout_mode = 2
+min_value = 0.01
+max_value = 1000.0
+step = 0.01
+value = 0.01
+
+[node name="Label8" type="Label" parent="CanvasLayer/VBoxContainer/VSplitContainer/HSplitContainer/RightPanel/TabContainer/Object" unique_id=2052769210]
+layout_mode = 2
+text = "ПРАВАЯ СТОРОНА"
+
+[node name="RightEdge_SpinBox" type="SpinBox" parent="CanvasLayer/VBoxContainer/VSplitContainer/HSplitContainer/RightPanel/TabContainer/Object" unique_id=1594825382]
+layout_mode = 2
+min_value = 0.01
+max_value = 1000.0
+step = 0.01
+value = 0.01
+
 [node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer/VSplitContainer/HSplitContainer/RightPanel/TabContainer/Object" unique_id=911530577]
 layout_mode = 2
 text = "ЦВЕТ"
@@ -303,9 +337,6 @@ script = ExtResource("6_272bh")
 [node name="ObjectSpawner" type="Node" parent="." unique_id=776412356]
 script = ExtResource("7_5vw27")
 
-[node name="SelectionManager" type="Node" parent="." unique_id=1652423285]
-script = ExtResource("8_efxa6")
-
 [node name="LinkManager" type="Node" parent="." unique_id=1226318020]
 script = ExtResource("9_dg77c")
 
@@ -317,3 +348,6 @@ script = ExtResource("11_w48qg")
 
 [node name="Shape_drawer" type="Node2D" parent="." unique_id=272177524]
 script = ExtResource("12_dg77c")
+
+[node name="SelectionManager" type="Node2D" parent="." unique_id=1269904277]
+script = ExtResource("8_efxa6")

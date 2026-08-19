@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cwcnn6iamhx58"]
+
+[ext_resource type="Script" uid="uid://cg4lhgmvfaovr" path="res://tscn obj  + his script/circle.gd" id="1_pj2yy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qtu10"]
+friction = 0.3
+bounce = 0.7
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wltir"]
+load_path = "res://.godot/imported/889541.png-26e1c57748b9184a3063cd38bbc1f8e0.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1n5va"]
+radius = 256.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ws5ts"]
+radius = 9.0
+
+[node name="круг" type="RigidBody2D" unique_id=906599561]
+physics_material_override = SubResource("PhysicsMaterial_qtu10")
+continuous_cd = 1
+script = ExtResource("1_pj2yy")
+metadata/_edit_vertical_guides_ = [18.0, -18.0]
+metadata/_edit_horizontal_guides_ = [-18.0, 18.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=859913570]
+position = Vector2(-2.9802322e-07, 2.2053719e-06)
+scale = Vector2(0.0703125, 0.0703125)
+texture = SubResource("CompressedTexture2D_wltir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1857373515]
+shape = SubResource("CircleShape2D_1n5va")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=439676949]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=98586924]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ws5ts")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

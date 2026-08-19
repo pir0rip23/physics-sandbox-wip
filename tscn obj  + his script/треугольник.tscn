@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b28clexryfjlg"]
+
+[ext_resource type="Script" uid="uid://d1trwq01ekmka" path="res://tscn obj  + his script/triangle.gd" id="1_n5bch"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1n5va"]
+
+[node name="треугольник" type="RigidBody2D" unique_id=418284885]
+disable_mode = 2
+physics_material_override = SubResource("PhysicsMaterial_1n5va")
+continuous_cd = 1
+script = ExtResource("1_n5bch")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=522725113]
+polygon = PackedVector2Array(0, -20, -20, 20, 20, 20)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1011235403]
+polygon = PackedVector2Array(-20, 20, 0, -20, 20, 20)

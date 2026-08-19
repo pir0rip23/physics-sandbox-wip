@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://bt7wyxrp7q33k"]
+
+[ext_resource type="Script" uid="uid://ble1rbke520q6" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://miq6nqc7a2tr" path="res://texturs/white ui.png" id="2_fu7sn"]
+[ext_resource type="VideoStream" uid="uid://dm3g7nrn03jwl" path="res://content/геймплей.ogv" id="3_glbon"]
+[ext_resource type="FontFile" uid="uid://ba6m5vv1271xr" path="res://texturs/Montserrat-SemiBold.ttf" id="3_jix8l"]
+[ext_resource type="FontFile" uid="uid://dw2y8ygwalu4m" path="res://texturs/Montserrat-ExtraBold.ttf" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://d1di6t3rbwu8m" path="res://texturs/bee.png" id="6_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://d0q6hsy2kyofe" path="res://texturs/free-icon-gear-1242494 2.png" id="6_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://mvdp3jt8dmhp" path="res://texturs/mint.png" id="7_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://c5uxl2rs75t8n" path="res://texturs/white.png" id="8_0k4wn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("3_nlkkf")
+font_size = 80
+font_color = Color(1, 0.3647059, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.81960785, 0.83137256, 0.8156863, 0.7058824)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmjyp"]
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(1, 1, 1, 0.6)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8whpc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="MainMenu" type="Control" unique_id=984609327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Background" type="TextureRect" parent="." unique_id=567163500]
+layout_mode = 0
+offset_right = 1440.0
+offset_bottom = 900.0
+texture = ExtResource("2_fu7sn")
+
+[node name="name" type="Label" parent="Background" unique_id=29079250]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 408.0
+offset_bottom = 121.0
+text = "SAD BOX"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="Panel" type="Panel" parent="." unique_id=31596889]
+clip_children = 2
+custom_minimum_size = Vector2(903, 616)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 163.0
+offset_right = 905.0
+offset_bottom = 779.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Panel" unique_id=336509094]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 902.0
+offset_bottom = 616.0
+stream = ExtResource("3_glbon")
+autoplay = true
+expand = true
+loop = true
+
+[node name="SettingsMenu" type="VBoxContainer" parent="Panel" unique_id=170616136]
+visible = false
+layout_mode = 0
+offset_top = 126.0
+offset_right = 906.0
+offset_bottom = 617.0
+
+[node name="BeeButton" type="Button" parent="Panel/SettingsMenu" unique_id=2018558176]
+custom_minimum_size = Vector2(295, 110)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whpc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dmjyp")
+text = "bee
+"
+icon = ExtResource("6_dy7ct")
+
+[node name="MintButton" type="Button" parent="Panel/SettingsMenu" unique_id=1007348702]
+custom_minimum_size = Vector2(295, 110)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whpc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dmjyp")
+text = "black mint"
+icon = ExtResource("7_0o4t1")
+
+[node name="PeachButton" type="Button" parent="Panel/SettingsMenu" unique_id=253311572]
+custom_minimum_size = Vector2(295, 110)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whpc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dmjyp")
+text = "white peach
+"
+icon = ExtResource("8_0k4wn")
+
+[node name="theme" type="Label" parent="Panel" unique_id=892963502]
+visible = false
+layout_mode = 0
+offset_left = 322.0
+offset_top = 11.0
+offset_right = 569.0
+offset_bottom = 114.0
+text = "Темы"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=594833226]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = -176.0
+offset_right = -164.0
+offset_bottom = 214.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="CreateButton" type="Button" parent="VBoxContainer" unique_id=714085377]
+custom_minimum_size = Vector2(295, 110)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whpc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dmjyp")
+text = "все уровни
+"
+
+[node name="StoryButton" type="Button" parent="VBoxContainer" unique_id=587140740]
+custom_minimum_size = Vector2(295, 110)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whpc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dmjyp")
+text = "сюжет
+"
+
+[node name="LevelsButton" type="Button" parent="VBoxContainer" unique_id=995734449]
+custom_minimum_size = Vector2(295, 110)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dmjyp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8whpc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dmjyp")
+text = "создание
+
+"
+
+[node name="NastroikiButton" type="TextureButton" parent="." unique_id=1008329226]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.040000003
+anchor_bottom = 0.032
+offset_left = 1368.0
+offset_top = 16.0
+offset_right = 1367.4
+offset_bottom = 44.199997
+texture_normal = ExtResource("6_nlkkf")
